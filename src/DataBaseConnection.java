@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 public class DataBaseConnection {
     //数据库连接
-    private static final String url="jdbc:mysql://localhost:3306/";
+    private static final String url="jdbc:mysql://localhost:3306/hotelmanagementsystem";
     private static final String user="root";
     private static final String password="fushiyuchen";
 
