@@ -1013,7 +1013,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="292" parent="1" name="hotelmanagementsystem">
-      <LastIntrospectionLocalTimestamp>2024-06-03.10:23:37</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-06-04.07:19:33</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb3_croatian_ci</CollationName>
     </schema>
     <user id="293" parent="1" name="mysql.infoschema">
@@ -5135,7 +5135,7 @@ mysql&gt; SELECT VERSION(), sys.version_patch();
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_croatian_ci</CollationName>
     </table>
-    <table id="677" parent="292" name="romm_manager_relations">
+    <table id="677" parent="292" name="room_manager_relations">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_croatian_ci</CollationName>
     </table>
@@ -24281,12 +24281,12 @@ VARIABLE_NAME</ColNames>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="4657" parent="677" name="romm_manager_relations_ibfk_1">
+    <foreign-key id="4657" parent="677" name="room_manager_relations_ibfk_1">
       <ColNames>room_id</ColNames>
       <RefColNames>room_id</RefColNames>
       <RefTableName>rooms</RefTableName>
     </foreign-key>
-    <foreign-key id="4658" parent="677" name="romm_manager_relations_ibfk_2">
+    <foreign-key id="4658" parent="677" name="room_manager_relations_ibfk_2">
       <ColNames>manager_id</ColNames>
       <RefColNames>manager_id</RefColNames>
       <RefTableName>room_managers</RefTableName>

@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2cfd321-0717-4dc5-8d55-1f5e9c7225c7" name="更改" comment="test">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Booking_manage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Customer_manage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/relation_manage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/room_manager_manage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/a24e3c43-3ab3-4bf0-a651-2b323cabf1fa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a24e3c43-3ab3-4bf0-a651-2b323cabf1fa.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/room_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/room_manage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Booking_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Booking_manage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Customer_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer_manage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +41,9 @@
     &quot;accountId&quot;: &quot;68d843da-870a-40d9-bf11-b1f1efa525ed&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="autoscrollToSource" value="true" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -67,7 +70,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
-    &quot;应用程序.room_manage.executor&quot;: &quot;Run&quot;
+    &quot;应用程序.room_manage.executor&quot;: &quot;Profiler#1&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -115,6 +118,7 @@
       <workItem from="1717398379000" duration="3015000" />
       <workItem from="1717404036487" duration="6451000" />
       <workItem from="1717410519070" duration="999000" />
+      <workItem from="1717482023474" duration="4229000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -149,16 +153,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
     <option name="LAST_COMMIT_MESSAGE" value="test" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/room_manage.java</url>
-          <line>158</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

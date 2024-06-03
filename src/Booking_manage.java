@@ -70,6 +70,7 @@ public class Booking_manage {
                 //执行并返回结果
                 ResultSet resultSet = statement.executeQuery()
         ) {
+            statement.setInt(1, booking_id);
             while(resultSet.next()){
                 int room_id =resultSet.getInt("room_id");
                 int guest_id =resultSet.getInt("guest_id");

@@ -62,6 +62,7 @@ public class Customer_manage{
                 //执行并返回结果
                 ResultSet resultSet = statement.executeQuery()
         ) {
+            statement.setInt(1,guest_id);
             while(resultSet.next()){
                 String name=resultSet.getString("name");
                 String gender=resultSet.getString("gender");
