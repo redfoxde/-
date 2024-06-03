@@ -1013,7 +1013,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="292" parent="1" name="hotelmanagementsystem">
-      <LastIntrospectionLocalTimestamp>2024-06-02.09:14:36</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-06-03.10:23:37</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb3_croatian_ci</CollationName>
     </schema>
     <user id="293" parent="1" name="mysql.infoschema">
@@ -24221,7 +24221,7 @@ VARIABLE_NAME</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="4644" parent="676" name="guest_id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>2</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -24232,7 +24232,7 @@ VARIABLE_NAME</ColNames>
       <Position>2</Position>
     </column>
     <column id="4646" parent="676" name="gender">
-      <DasType>enum(&apos;男&apos;, &apos;女&apos;)|0e</DasType>
+      <DasType>varchar(10)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
@@ -24333,7 +24333,7 @@ manager_id</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="4667" parent="679" name="room_id">
-      <AutoIncrement>10122002</AutoIncrement>
+      <AutoIncrement>10122003</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -24358,7 +24358,7 @@ manager_id</ColNames>
       <Position>5</Position>
     </column>
     <column id="4672" parent="679" name="STATUS">
-      <DasType>enum(&apos;空闲&apos;, &apos;已预定&apos;, &apos;已入住&apos;)|0e</DasType>
+      <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>

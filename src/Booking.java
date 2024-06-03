@@ -36,19 +36,19 @@ public class Booking {
     public void setGuest_id(int guest_id) {
         this.guest_id = guest_id;
     }
-    public Date getCheck_in_date() {
-        return check_in_date;
+    public java.sql.Date getCheck_in_date() {
+        return (java.sql.Date) check_in_date;
     }
     public void setCheck_in_date(Date check_in_date) {
         this.check_in_date = check_in_date;
     }
-    public Date getExpected_check_out_date() {
-        return expected_check_out_date;
+    public java.sql.Date getExpected_check_out_date() {
+        return (java.sql.Date) expected_check_out_date;
     }
     public void setExpected_check_out_date(Date expected_check_out_date) {
         this.expected_check_out_date = expected_check_out_date;
     }
-    public Date getActual_check_out_date() {
-        return actual_check_out_date;
+    public java.sql.Date getActual_check_out_date() {
+        return (java.sql.Date) actual_check_out_date;
     }
 }
