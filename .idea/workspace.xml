@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2cfd321-0717-4dc5-8d55-1f5e9c7225c7" name="更改" comment="test">
-      <change afterPath="$PROJECT_DIR$/src/relation_manage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/room_manager_manage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="b2cfd321-0717-4dc5-8d55-1f5e9c7225c7" name="更改" comment="Delete 酒店管理">
+      <change afterPath="$PROJECT_DIR$/src/user_manage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/a24e3c43-3ab3-4bf0-a651-2b323cabf1fa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a24e3c43-3ab3-4bf0-a651-2b323cabf1fa.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Booking_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Booking_manage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Customer_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer_manage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +22,13 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="krismiwe &lt;144432869+krismiwe@users.noreply.github.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -118,7 +119,8 @@
       <workItem from="1717398379000" duration="3015000" />
       <workItem from="1717404036487" duration="6451000" />
       <workItem from="1717410519070" duration="999000" />
-      <workItem from="1717482023474" duration="4229000" />
+      <workItem from="1717482023474" duration="4325000" />
+      <workItem from="1717571464166" duration="853000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -144,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717400982240</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Delete 酒店管理">
+      <option name="closed" value="true" />
+      <created>1717487053357</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1717487053357</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +162,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="Delete 酒店管理" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete 酒店管理" />
   </component>
 </project>
