@@ -4,10 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2cfd321-0717-4dc5-8d55-1f5e9c7225c7" name="更改" comment="Delete 酒店管理">
+    <list default="true" id="b2cfd321-0717-4dc5-8d55-1f5e9c7225c7" name="更改" comment="后端功能">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HotelManagementSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LoginFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MainFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RegisterFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RoomManagementPanel.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/user_manage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a24e3c43-3ab3-4bf0-a651-2b323cabf1fa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a24e3c43-3ab3-4bf0-a651-2b323cabf1fa.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Booking_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Booking_manage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Customer_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer_manage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +36,22 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;searchQuery&quot;: &quot;user_manage&quot;,
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;assignee&quot;: &quot;redfoxde&quot;
+    },
+    {
+      &quot;searchQuery&quot;: &quot;user_manage&quot;,
+      &quot;state&quot;: &quot;OPEN&quot;
+    }
+  ],
   &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;redfoxde&quot;
+    &quot;searchQuery&quot;: &quot;user_manage&quot;,
+    &quot;state&quot;: &quot;OPEN&quot;
   }
 }</component>
   <component name="GithubPullRequestsUISettings">{
@@ -54,37 +72,58 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/codejava/hotel_management_system/src&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
-    &quot;应用程序.room_manage.executor&quot;: &quot;Profiler#1&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "135",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/codejava/hotel_management_system/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "configurable.group.tools",
+    "vue.rearranger.settings.migration": "true",
+    "应用程序.HotelManagementSystem.executor": "Run",
+    "应用程序.HotelmanagementSystem.executor": "Run",
+    "应用程序.MainFrame.executor": "Run",
+    "应用程序.StringUtil.executor": "Run",
+    "应用程序.room_manage.executor": "Run",
+    "应用程序.test_01.executor": "Run"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlserver",
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\codejava\hotel_management_system\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\codejava\hotel_management_system\src" />
     </key>
   </component>
   <component name="RunManager">
+    <configuration name="MainFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainFrame" />
+      <module name="hotel_management_system" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="room_manage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="room_manage" />
       <module name="hotel_management_system" />
@@ -94,6 +133,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.MainFrame" />
         <item itemvalue="应用程序.room_manage" />
       </list>
     </recent_temporary>
@@ -120,7 +160,9 @@
       <workItem from="1717404036487" duration="6451000" />
       <workItem from="1717410519070" duration="999000" />
       <workItem from="1717482023474" duration="4325000" />
-      <workItem from="1717571464166" duration="853000" />
+      <workItem from="1717571464166" duration="7041000" />
+      <workItem from="1717578529081" duration="8000" />
+      <workItem from="1717578546573" duration="16582000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -154,15 +196,39 @@
       <option name="project" value="LOCAL" />
       <updated>1717487053357</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="后端功能">
+      <option name="closed" value="true" />
+      <created>1717572368689</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717572368689</updated>
+    </task>
+    <task id="LOCAL-00006" summary="后端功能">
+      <option name="closed" value="true" />
+      <created>1717574338937</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717574338937</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.jfd" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
     <MESSAGE value="Delete 酒店管理" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete 酒店管理" />
+    <MESSAGE value="后端功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="后端功能" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

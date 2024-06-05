@@ -12,7 +12,7 @@ public class Customer_manage{
         String sql= "INSERT INTO guests(guest_id,name,gender,id_number,phone_number)VALUES(?,?,?,?,?) ";
 
         try(Connection connection = DataBaseConnection.getConnection();
-        PreparedStatement statement=connection.prepareStatement(sql)){
+            PreparedStatement statement=connection.prepareStatement(sql)){
             statement.setInt(1,customer.getGuest_id());
             statement.setString(2,customer.getName());
             statement.setString(3, customer.getGender());
