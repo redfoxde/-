@@ -5,17 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2cfd321-0717-4dc5-8d55-1f5e9c7225c7" name="更改" comment="后端功能">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HotelManagementSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LoginFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MainFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RegisterFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RoomManagementPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user_manage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Booking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Room.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Swing/BookingManagePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Swing/GuestMangePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Swing/MainFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Swing/ReportGenereationPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a24e3c43-3ab3-4bf0-a651-2b323cabf1fa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a24e3c43-3ab3-4bf0-a651-2b323cabf1fa.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Booking_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Booking_manage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Customer_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer_manage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel_management_system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hotel_management_system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Booking.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Booking_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/Booking_manage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Customer_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/Customer_manage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataBaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool/DataBaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HotelManagementSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/HotelManagementSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/LoginFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/RegisterFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Room.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RoomManagementPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/RoomManagementPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/QQͼƬ20240604204523.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mysql-connector-java-8.0.27.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool/mysql-connector-java-8.0.27.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/relation_manage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/room_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/room_manage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/room_manager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/room_manager_manage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/room_manager_relation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/user.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/user_manage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,13 +93,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.HotelManagementSystem.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "135",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/codejava/hotel_management_system/src",
+    "last_opened_file_path": "D:/codejava/hotel_management_system/src/img",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -107,25 +127,28 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="Swing" />
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\codejava\hotel_management_system\src\img" />
       <recent name="D:\codejava\hotel_management_system\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\codejava\hotel_management_system\src\tool" />
       <recent name="D:\codejava\hotel_management_system\src" />
     </key>
   </component>
   <component name="RunManager">
     <configuration name="MainFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainFrame" />
+      <option name="MAIN_CLASS_NAME" value="Swing.MainFrame" />
       <module name="hotel_management_system" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="room_manage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="room_manage" />
+      <option name="MAIN_CLASS_NAME" value="DAO.room_manage" />
       <module name="hotel_management_system" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -162,7 +185,10 @@
       <workItem from="1717482023474" duration="4325000" />
       <workItem from="1717571464166" duration="7041000" />
       <workItem from="1717578529081" duration="8000" />
-      <workItem from="1717578546573" duration="16582000" />
+      <workItem from="1717578546573" duration="24518000" />
+      <workItem from="1717911186278" duration="19437000" />
+      <workItem from="1717987451586" duration="2839000" />
+      <workItem from="1718007604458" duration="7590000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -212,7 +238,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717574338937</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="后端功能">
+      <option name="closed" value="true" />
+      <created>1717596081542</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717596081542</updated>
+    </task>
+    <task id="LOCAL-00008" summary="后端功能">
+      <option name="closed" value="true" />
+      <created>1717603751457</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717603751457</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,6 +262,17 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.jfd" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />

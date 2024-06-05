@@ -1,3 +1,7 @@
+package DAO;
+import Data.Room;
+import tool.DataBaseConnection;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,7 +12,7 @@ import java.util.List;
 public class room_manage {
     //添加房间
     public void addRoom(Room room) {
-        String query = "INSERT INTO rooms(room_id,room_number,room_type,price_per_night,discount_info,STATUS)VALUES(?,?,?,?,?,?)";
+        String query = "INSERT INTO rooms(room_id,room_number,room_type,room_price,room_discount,STATUS,room_manager,room_contact)VALUES(?,?,?,?,?,?,?,?)";
         try (
                 //获取数据库链接
                 Connection connection = DataBaseConnection.getConnection();
@@ -16,11 +20,14 @@ public class room_manage {
                 PreparedStatement statement = connection.prepareStatement(query)
         ) {
             statement.setInt(1, room.getRoom_id());
-            statement.setString(2, room.getRoom_number());
+            statement.setInt(2, room.getRoom_number());
             statement.setString(3, room.getRoom_type());
-            statement.setDouble(4, room.getPrice_per_night());
-            statement.setDouble(5, room.getDiscount());
+            statement.setDouble(4, room.getRoom_price());
+            statement.setString(5, room.getRoom_discount());
             statement.setString(6, room.getStatus());
+            statement.setString(7, room.getRoom_manager());
+            statement.setString(8, room.getRoom_contact());
+
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -42,17 +49,20 @@ public class room_manage {
                 int room_id = resultSet.getInt("room_id");
                 String room_number = resultSet.getString("room_number");
                 String room_type = resultSet.getString("room_type");
-                double price_per_night = resultSet.getDouble("price_per_night");
-                double discount = resultSet.getDouble("discount_info");
+                String room_price = resultSet.getString("room_price");
+                double room_discount = resultSet.getDouble("room_discount");
                 String status = resultSet.getString("STATUS");
-
+                String room_manager = resultSet.getString("room_manager");
+                String room_contact = resultSet.getString("room_contact");
 
                 System.out.println("房间编号：" + room_id);
                 System.out.println("房间号：" + room_number);
                 System.out.println("房间类型：" + room_type);
-                System.out.println("价格：" + price_per_night);
-                System.out.println("折扣：" + discount);
+                System.out.println("价格：" + room_price);
+                System.out.println("折扣：" + room_discount);
                 System.out.println("状态：" + status);
+                System.out.println("负责人："+room_manager);
+                System.out.println("联系电话："+room_contact);
             }
 
         } catch (SQLException e) {
@@ -77,15 +87,20 @@ public class room_manage {
             while (resultSet.next()) {
                 String room_number = resultSet.getString("room_number");
                 String room_type = resultSet.getString("room_type");
-                double price_per_night = resultSet.getDouble("price_per_night");
-                double discount = resultSet.getDouble("discount_info");
+                String room_price = resultSet.getString("room_price");
+                double room_discount = resultSet.getDouble("room_discount");
                 String status = resultSet.getString("STATUS");
+                String room_manager = resultSet.getString("room_manager");
+                String room_contact = resultSet.getString("room_contact");
 
+                System.out.println("房间编号：" + room_id);
                 System.out.println("房间号：" + room_number);
                 System.out.println("房间类型：" + room_type);
-                System.out.println("价格：" + price_per_night);
-                System.out.println("折扣：" + discount);
+                System.out.println("价格：" + room_price);
+                System.out.println("折扣：" + room_discount);
                 System.out.println("状态：" + status);
+                System.out.println("负责人："+room_manager);
+                System.out.println("联系电话："+room_contact);
             }
 
         } catch (SQLException e) {
@@ -95,7 +110,7 @@ public class room_manage {
 
     //更新信息
     public void updateRoom(Room room) {
-        String sql = "UPDATE rooms SET room_number=?,room_type=?,price_per_night=?,discount_info=?,STATUS=? WHERE room_id=?";
+        String sql ="UPDATE rooms SET room_number=?,room_type=?,room_price=?,room_discount=?,room_manager=?,room_contact=? WHERE room_id=? ";
         try (
                 //获取数据库链接
                 Connection connection = DataBaseConnection.getConnection();
@@ -103,12 +118,15 @@ public class room_manage {
                 PreparedStatement statement = connection.prepareStatement(sql)
         ) {
 
-            statement.setString(1, room.getRoom_number());
+            statement.setInt(1, room.getRoom_number());
             statement.setString(2, room.getRoom_type());
-            statement.setDouble(3, room.getPrice_per_night());
-            statement.setDouble(4, room.getDiscount());
+            statement.setDouble(3, room.getRoom_price());
+            statement.setString(4, room.getRoom_discount());
             statement.setString(5, room.getStatus());
-            statement.setInt(6, room.getRoom_id());
+            statement.setString(6, room.getRoom_manager());
+            statement.setString(7, room.getRoom_contact());
+            statement.setInt(8, room.getRoom_id());
+
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -133,15 +151,15 @@ public class room_manage {
 }
 
 //    public static void main(String[] args) {
-//        room_manage manager = new room_manage();
-//        Room room = new Room(2236104, "104", "标准间", 130, 0.95, "空闲");
+//        DAO.room_manage manager = new DAO.room_manage();
+//        Data.Room room = new Data.Room(2236104, "104", "标准间", 130, 0.95, "空闲");
 
         // 添加房间
         //manager.addRoom(room);
 
 
         // 更新房间信息
-        //room = new Room(2236104,"105","标准间",130,0.95,"已预定");
+        //room = new Data.Room(2236104,"105","标准间",130,0.95,"已预定");
         //manager.updateRoom(room);
 
         //查询所有房间

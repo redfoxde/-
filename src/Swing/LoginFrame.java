@@ -1,3 +1,7 @@
+package Swing;
+
+import tool.DataBaseConnection;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -16,16 +20,21 @@ public class LoginFrame extends JFrame {
         setSize(300, 100);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        //加载背景图片
+//        ImageIcon backgroundIcon=new ImageIcon("QQͼƬ20240604204523.jpg");
+//        JLabel background = new JLabel(backgroundIcon);
+//        background.setLayout(new BorderLayout());
+        //添加登录表单
+        usernameField = new JTextField(10);
+        passwordField = new JPasswordField(10);
+
 
         JPanel panel = new JPanel(new GridLayout(3, 2));
 
-
         panel.add(new JLabel("用户名:"));
-        usernameField = new JTextField(10);
         panel.add(usernameField);
 
-        panel.add(new JLabel("密码:"));
-        passwordField = new JPasswordField(10);
+        panel.add(new JLabel("密码:"));;
         panel.add(passwordField);
 
         JButton login = new JButton("登录");
@@ -33,7 +42,7 @@ public class LoginFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String username = usernameField.getText();
                 String password = new String(passwordField.getPassword());
-                try(Connection connection=DataBaseConnection.getConnection()){
+                try(Connection connection= DataBaseConnection.getConnection()){
                     String sql="SELECT *FROM admin WHERE username=? and password=?";
                     PreparedStatement statement=connection.prepareStatement(sql);
                     statement.setString(1,username);
@@ -66,8 +75,11 @@ public class LoginFrame extends JFrame {
             dispose();
         });
         panel.add(register);
-
         add(panel);
+
+//        background.add(panel, BorderLayout.CENTER);
+//        setContentPane(background);
+
         setVisible(true);
 
     }
