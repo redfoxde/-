@@ -1,3 +1,8 @@
+package DAO;
+
+import Data.user;
+import tool.DataBaseConnection;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,17 +13,16 @@ import java.util.List;
 public class user_manage {
     //增加用户信息（实际是实现注册的功能之一）
     public void adduser(user u){
-        String sql="insert into admin(id,username,nickname,password) values(?,?,?,?)";
+        String sql="insert into admin(username,password) values(?,?)";
         try(
                 //连接
                 Connection connection = DataBaseConnection.getConnection();
                 //预编译语句
                 PreparedStatement statement = connection.prepareStatement(sql);
         ){
-            statement.setInt(1,u.getId());
-            statement.setString(2,u.getUsername());
-            statement.setString(3,u.getNickname());
-            statement.setString(4,u.getPassword());
+
+            statement.setString(1,u.getUsername());
+            statement.setString(2,u.getPassword());
             statement.executeUpdate();
 
         }catch (SQLException e){
@@ -37,15 +41,12 @@ public class user_manage {
         ) {
             while (resultSet.next()) {
 
-                int id = resultSet.getInt("id");
+
                 String username = resultSet.getString("username");
-                String nickname = resultSet.getString("nickname");
                 String password = resultSet.getString("password");
 
 
-                System.out.println("用户id：" + id);
-                System.out.println("用户姓名：" + username);
-                System.out.println("用户昵称：" + nickname);
+                System.out.println("用户账号：" + username);;
                 System.out.println("用户密码：" + password);
 
 
@@ -58,7 +59,7 @@ public class user_manage {
 
     //查看单个用户信息
     public void getuser(int id){
-        String sql="select * from admin where id=?";
+        String sql="select * from admin where username=?";
         try (
                 Connection connection = DataBaseConnection.getConnection();
                 PreparedStatement statement = connection.prepareStatement(sql);
@@ -69,11 +70,9 @@ public class user_manage {
             while (resultSet.next()) {
 
                 String username = resultSet.getString("username");
-                String nickname = resultSet.getString("nickname");
                 String password = resultSet.getString("password");
 
                 System.out.println("用户姓名：" + username);
-                System.out.println("用户昵称：" + nickname);
                 System.out.println("用户密码：" + password);
 
 
@@ -85,17 +84,16 @@ public class user_manage {
 
     //更新
     public void updateuser(user u){
-        String sql="update admin set username=?,nickname=?,password=? where id=?";
+        String sql="update admin set password=? where username=?";
         try(
                 //连接
                 Connection connection = DataBaseConnection.getConnection();
                 //预编译语句
                 PreparedStatement statement = connection.prepareStatement(sql);
         ){
-            statement.setInt(4,u.getId());
-            statement.setString(1,u.getUsername());
-            statement.setString(2,u.getNickname());
-            statement.setString(3,u.getPassword());
+
+            statement.setString(2,u.getUsername());
+            statement.setString(1,u.getPassword());
             statement.executeUpdate();
 
         }catch (SQLException e){
@@ -104,8 +102,8 @@ public class user_manage {
     }
 
     //删除
-    public void deleteuser(int id){
-        String sql="delete from admin where id=?";
+    public void deleteuser(String username){
+        String sql="delete from admin where username=?";
         try(
                 //连接
                 Connection connection = DataBaseConnection.getConnection();
@@ -113,7 +111,7 @@ public class user_manage {
                 PreparedStatement statement = connection.prepareStatement(sql);
         ){
 
-            statement.setInt(1,id);
+            statement.setString(1,username);
             statement.executeUpdate();
 
         }catch (SQLException e){

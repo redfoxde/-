@@ -1,3 +1,7 @@
+package Swing;
+
+import tool.DataBaseConnection;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,16 +13,15 @@ import java.sql.SQLException;
 public class RegisterFrame extends JFrame {
     private JTextField usernameField;
     private JPasswordField passwordField;
-    private JTextField nicknameField;
-    private JTextField IDField;
+
 
     public RegisterFrame() {
         setTitle("酒店管理系统-注册");
-        setSize(400, 200);
+        setSize(300, 100);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        JPanel panel = new JPanel(new GridLayout(5, 3));
+        JPanel panel = new JPanel(new GridLayout(3, 2));
 
         panel.add(new JLabel("用户名:"));
         usernameField = new JTextField(10);
@@ -28,13 +31,6 @@ public class RegisterFrame extends JFrame {
         passwordField = new JPasswordField(10);
         panel.add(passwordField);
 
-        panel.add(new JLabel("昵称:"));
-        nicknameField = new JTextField(10);
-        panel.add(nicknameField);
-
-        panel.add(new JLabel("ID:"));
-        IDField = new JTextField(10);
-        panel.add(IDField);
 
         JButton register = new JButton("注册");
         register.addActionListener(new ActionListener() {
@@ -42,15 +38,13 @@ public class RegisterFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String username = usernameField.getText();
                 String password = String.valueOf(passwordField.getPassword());
-                String nickname = nicknameField.getText();
-                String id = IDField.getText();
+
                 try (Connection connection = DataBaseConnection.getConnection()) {
-                    String sql = "insert into admin(id,username,nickname,password) values(?,?,?,?)";
+                    String sql = "insert into admin(username,password) values(?,?)";
                     PreparedStatement statement = connection.prepareStatement(sql);
-                    statement.setString(1, id);
-                    statement.setString(2, username);
-                    statement.setString(3, nickname);
-                    statement.setString(4, password);
+                    statement.setString(1, username);
+                    statement.setString(2, password);
+
                     int resultSet = statement.executeUpdate();
 
                     if (resultSet>0) {
