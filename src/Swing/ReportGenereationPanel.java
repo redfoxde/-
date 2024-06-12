@@ -63,11 +63,9 @@ public class ReportGenereationPanel extends JPanel {
 
             }
 
-
-
         });
 
-        internalFrame.add(panel,BorderLayout.NORTH);
+        internalFrame.add(panel,BorderLayout.SOUTH);
         desktopPane.add(internalFrame);
         add(desktopPane,BorderLayout.CENTER);
     }

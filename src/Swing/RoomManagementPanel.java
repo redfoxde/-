@@ -14,7 +14,7 @@ public class RoomManagementPanel extends JPanel{
         setLayout(new BorderLayout());
         JDesktopPane desktopPane = new JDesktopPane();
         JInternalFrame internalFrame = new JInternalFrame("添加房间",true,false,true,true);
-        internalFrame.setSize(400,400);
+        internalFrame.setSize(400,300);
         internalFrame.setVisible(true);
 
         // Data.Room Form

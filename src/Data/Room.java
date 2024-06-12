@@ -11,6 +11,7 @@ public class Room {
     private String room_contact;
 
     //constructor
+    public Room() {}
     public Room(int room_id,int room_number,String room_type,double room_price,String room_discount,String status,String room_manager,String room_contact){
         this.room_id = room_id;
         this.room_number = room_number;
@@ -68,6 +69,24 @@ public class Room {
     }
     public void setRoom_contact(String room_contact) {
         this.room_contact = room_contact;
+    }
+    public String toString(){
+        return "房间信息[房间编号:"+
+                room_id+"\n"+
+                "房间号:"+
+                room_number+"\n"+
+                "房间类型:"+
+                room_type+"\n"+
+                "房间价格:"+
+                room_price+"\n"+
+                "房间折扣:"+
+                room_discount+"\n"+
+                "房间负责人:"+
+                room_manager+"\n"+
+                "负责人联系电话:"+
+                room_contact+"\n"+"]";
+
+
     }
 
 }

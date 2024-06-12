@@ -45,24 +45,18 @@ public class room_manage {
                 ResultSet resultSet = statement.executeQuery()
         ) {
             while (resultSet.next()) {
+                Room room=new Room();
+                room.setRoom_id(resultSet.getInt("room_id"));
+                room.setRoom_number(resultSet.getInt("room_number"));
+                room.setRoom_type(resultSet.getString("room_type"));
+                room.setRoom_price(resultSet.getDouble("room_price"));
+                room.setRoom_discount(resultSet.getString("room_discount"));
+                room.setStatus(resultSet.getString("status"));
+                room.setRoom_manager(resultSet.getString("room_manager"));
+                room.setRoom_contact(resultSet.getString("room_contact"));
+                rooms.add(room);
 
-                int room_id = resultSet.getInt("room_id");
-                String room_number = resultSet.getString("room_number");
-                String room_type = resultSet.getString("room_type");
-                String room_price = resultSet.getString("room_price");
-                double room_discount = resultSet.getDouble("room_discount");
-                String status = resultSet.getString("STATUS");
-                String room_manager = resultSet.getString("room_manager");
-                String room_contact = resultSet.getString("room_contact");
 
-                System.out.println("房间编号：" + room_id);
-                System.out.println("房间号：" + room_number);
-                System.out.println("房间类型：" + room_type);
-                System.out.println("价格：" + room_price);
-                System.out.println("折扣：" + room_discount);
-                System.out.println("状态：" + status);
-                System.out.println("负责人："+room_manager);
-                System.out.println("联系电话："+room_contact);
             }
 
         } catch (SQLException e) {
@@ -72,7 +66,8 @@ public class room_manage {
     }
 
     //展示房间细节
-    public void getRoomDetail(int room_id) {
+    public List<Room> getRoomDetail(int room_id) {
+        List<Room> rooms = new ArrayList<>();
         String query = "SELECT* FROM rooms WHERE room_id=? ";
 
         try (    //获取数据库连接
@@ -85,27 +80,38 @@ public class room_manage {
             //将结果返回
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                String room_number = resultSet.getString("room_number");
-                String room_type = resultSet.getString("room_type");
-                String room_price = resultSet.getString("room_price");
-                double room_discount = resultSet.getDouble("room_discount");
-                String status = resultSet.getString("STATUS");
-                String room_manager = resultSet.getString("room_manager");
-                String room_contact = resultSet.getString("room_contact");
-
-                System.out.println("房间编号：" + room_id);
-                System.out.println("房间号：" + room_number);
-                System.out.println("房间类型：" + room_type);
-                System.out.println("价格：" + room_price);
-                System.out.println("折扣：" + room_discount);
-                System.out.println("状态：" + status);
-                System.out.println("负责人："+room_manager);
-                System.out.println("联系电话："+room_contact);
+                Room room=new Room();
+                room.setRoom_id(resultSet.getInt("room_id"));
+                room.setRoom_number(resultSet.getInt("room_number"));
+                room.setRoom_type(resultSet.getString("room_type"));
+                room.setRoom_price(resultSet.getDouble("room_price"));
+                room.setRoom_discount(resultSet.getString("room_discount"));
+                room.setStatus(resultSet.getString("status"));
+                room.setRoom_manager(resultSet.getString("room_manager"));
+                room.setRoom_contact(resultSet.getString("room_contact"));
+                rooms.add(room);
+//                String room_number = resultSet.getString("room_number");
+//                String room_type = resultSet.getString("room_type");
+//                String room_price = resultSet.getString("room_price");
+//                double room_discount = resultSet.getDouble("room_discount");
+//                String status = resultSet.getString("STATUS");
+//                String room_manager = resultSet.getString("room_manager");
+//                String room_contact = resultSet.getString("room_contact");
+//
+//                System.out.println("房间编号：" + room_id);
+//                System.out.println("房间号：" + room_number);
+//                System.out.println("房间类型：" + room_type);
+//                System.out.println("价格：" + room_price);
+//                System.out.println("折扣：" + room_discount);
+//                System.out.println("状态：" + status);
+//                System.out.println("负责人："+room_manager);
+//                System.out.println("联系电话："+room_contact);
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return rooms;
     }
 
     //更新信息

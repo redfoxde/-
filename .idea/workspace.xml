@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2cfd321-0717-4dc5-8d55-1f5e9c7225c7" name="更改" comment="全部框架">
-      <change afterPath="$PROJECT_DIR$/src/Sql/hotelmanagementsystem.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Swing/InquireManagePanel.java" afterDir="false" />
+    <list default="true" id="b2cfd321-0717-4dc5-8d55-1f5e9c7225c7" name="更改" comment="还需要拓展一些功能">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a24e3c43-3ab3-4bf0-a651-2b323cabf1fa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a24e3c43-3ab3-4bf0-a651-2b323cabf1fa.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2024_6_4_3_07____.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2024_6_4_下午3_07_取消提交了更改_[更改]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/Booking_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/Booking_manage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/room_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/room_manage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Swing/InquireManagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/InquireManagePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Swing/ReportGenereationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/ReportGenereationPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Swing/RoomManagementPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/RoomManagementPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,40 +71,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HotelManagementSystem.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "135",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/codejava/hotel_management_system/src/Sql",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "configurable.group.tools",
-    "vue.rearranger.settings.migration": "true",
-    "应用程序.HotelManagementSystem.executor": "Run",
-    "应用程序.HotelmanagementSystem.executor": "Run",
-    "应用程序.MainFrame.executor": "Run",
-    "应用程序.StringUtil.executor": "Run",
-    "应用程序.room_manage.executor": "Run",
-    "应用程序.test_01.executor": "Run"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HotelManagementSystem.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;135&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/codejava/hotel_management_system/src/Sql&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
+    &quot;应用程序.HotelManagementSystem.executor&quot;: &quot;Run&quot;,
+    &quot;应用程序.HotelmanagementSystem.executor&quot;: &quot;Run&quot;,
+    &quot;应用程序.MainFrame.executor&quot;: &quot;Run&quot;,
+    &quot;应用程序.StringUtil.executor&quot;: &quot;Run&quot;,
+    &quot;应用程序.room_manage.executor&quot;: &quot;Run&quot;,
+    &quot;应用程序.test_01.executor&quot;: &quot;Run&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlserver",
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver&quot;,
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Swing" />
@@ -166,7 +169,9 @@
       <workItem from="1717578546573" duration="24518000" />
       <workItem from="1717911186278" duration="19437000" />
       <workItem from="1717987451586" duration="2839000" />
-      <workItem from="1718007604458" duration="15391000" />
+      <workItem from="1718007604458" duration="15865000" />
+      <workItem from="1718079908504" duration="23000" />
+      <workItem from="1718176918945" duration="4657000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -248,7 +253,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718015625958</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="还需要拓展一些功能">
+      <option name="closed" value="true" />
+      <created>1718027903119</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1718027903119</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +286,8 @@
     <MESSAGE value="Delete 酒店管理" />
     <MESSAGE value="后端功能" />
     <MESSAGE value="全部框架" />
-    <option name="LAST_COMMIT_MESSAGE" value="全部框架" />
+    <MESSAGE value="还需要拓展一些功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="还需要拓展一些功能" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
