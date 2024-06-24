@@ -5,30 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2cfd321-0717-4dc5-8d55-1f5e9c7225c7" name="更改" comment="还需要拓展一些功能">
-      <change afterPath="$PROJECT_DIR$/src/DAO/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Swing/CustomerManageFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Swing/RoomManagementFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Swing/background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tool/ConvertTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a24e3c43-3ab3-4bf0-a651-2b323cabf1fa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a24e3c43-3ab3-4bf0-a651-2b323cabf1fa.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/Booking_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/Booking_manage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/Customer_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/Customer_manage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/room_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/room_manage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/user_manage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/BookingManagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/BookingManageFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/GuestMangePanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/InquireManagePanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/LoginFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/RegisterFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/RegisterFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/ReportGenereationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/ReportGenereationFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/RoomManagementPanel.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,9 +50,6 @@
     &quot;accountId&quot;: &quot;68d843da-870a-40d9-bf11-b1f1efa525ed&quot;
   }
 }</component>
-  <component name="PerforceDirect.Settings">
-    <option name="CHARSET" value="无" />
-  </component>
   <component name="ProblemsViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="selectedTabId" value="CurrentFile" />
@@ -139,7 +113,7 @@
       <recent name="D:\codejava\hotel_management_system\src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="应用程序.MainFrame">
     <configuration name="MainFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Swing.MainFrame" />
       <module name="hotel_management_system" />
@@ -226,6 +200,7 @@
       <workItem from="1719033308074" duration="681000" />
       <workItem from="1719092956540" duration="2496000" />
       <workItem from="1719174839928" duration="8059000" />
+      <workItem from="1719215228582" duration="94000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -323,7 +298,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718181812521</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="还需要拓展一些功能">
+      <option name="closed" value="true" />
+      <created>1719215235672</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1719215235672</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
