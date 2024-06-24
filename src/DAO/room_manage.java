@@ -7,9 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class room_manage {
@@ -30,8 +28,6 @@ public class room_manage {
             statement.setString(5, room.getStatus());
             statement.setString(6, room.getRoom_manager());
             statement.setString(7, room.getRoom_contact());
-
-            statement.executeUpdate();
             int AffectedRows = statement.executeUpdate();
             return AffectedRows > 0;
         } catch (SQLException e) {
@@ -46,53 +42,24 @@ public class room_manage {
         return ConvertTable.getJTable(customColumnNames,sql);
     }
 
-    //展示房间细节
-    public List<Room> getRoomDetail(int room_id) {
-        List<Room> rooms = new ArrayList<>();
-        String query = "SELECT* FROM rooms WHERE room_id=? ";
+    //按房号查询
+    public static JTable getRoomDetail(Map<String,String> customColumnNames,int room_number) {
+        String sql = "SELECT * FROM rooms WHERE room_number = ?";
 
-        try (    //获取数据库连接
-                 Connection connection = DataBaseConnection.getConnection();
-                 //预编译语句
-                 PreparedStatement statement = connection.prepareStatement(query)
+        return ConvertTable.getJTableOnly(customColumnNames,sql,room_number);
+    }
 
-        ) {
-            statement.setInt(1, room_id);
-            //将结果返回
-            ResultSet resultSet = statement.executeQuery();
-            while (resultSet.next()) {
-                Room room=new Room();
-                room.setRoom_id(resultSet.getInt("room_id"));
-                room.setRoom_number(resultSet.getInt("room_number"));
-                room.setRoom_type(resultSet.getString("room_type"));
-                room.setRoom_price(resultSet.getDouble("room_price"));
-                room.setRoom_discount(resultSet.getString("room_discount"));
-                room.setStatus(resultSet.getString("status"));
-                room.setRoom_manager(resultSet.getString("room_manager"));
-                room.setRoom_contact(resultSet.getString("room_contact"));
-                rooms.add(room);
-//                String room_number = resultSet.getString("room_number");
-//                String room_type = resultSet.getString("room_type");
-//                String room_price = resultSet.getString("room_price");
-//                double room_discount = resultSet.getDouble("room_discount");
-//                String status = resultSet.getString("STATUS");
-//                String room_manager = resultSet.getString("room_manager");
-//                String room_contact = resultSet.getString("room_contact");
-//
-//                System.out.println("房间编号：" + room_id);
-//                System.out.println("房间号：" + room_number);
-//                System.out.println("房间类型：" + room_type);
-//                System.out.println("价格：" + room_price);
-//                System.out.println("折扣：" + room_discount);
-//                System.out.println("状态：" + status);
-//                System.out.println("负责人："+room_manager);
-//                System.out.println("联系电话："+room_contact);
-            }
+    //按状态查询房间
+    public static JTable getRooms(Map<String,String> customColumnNames,String STATUS){
+        String sql = "SELECT * FROM rooms WHERE STATUS = ?";
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return rooms;
+        return ConvertTable.getJTableOnly(customColumnNames,sql,STATUS);
+    }
+    //按价格查询
+    public static JTable getRoomInPrice(Map<String,String> customColumnNames,double room_price) {
+        String sql = "SELECT * FROM rooms WHERE room_price <= ?";
+
+        return ConvertTable.getJTableOnly(customColumnNames,sql,room_price);
     }
 
     //更新信息
@@ -127,22 +94,37 @@ public class room_manage {
     }
 
     //删除房间
-    public boolean deleteRoom(int room_id) {
-        String sql = "DELETE FROM rooms WHERE room_id=?";
-        try (
-                Connection connection = DataBaseConnection.getConnection();
-                PreparedStatement statement = connection.prepareStatement(sql)
-        ) {
-            statement.setInt(1, room_id);
-            statement.executeUpdate();
-            int AffectedRows = statement.executeUpdate();
-            return AffectedRows > 0;
+    public boolean deleteRoom(int room_number) {
+        String checkBookingsQuery = "SELECT COUNT(*) FROM booking WHERE room_number = ?";
+        String deleteRoomQuery = "DELETE FROM rooms WHERE room_number = ?";
+
+        try (Connection connection = DataBaseConnection.getConnection();
+             PreparedStatement checkStatement = connection.prepareStatement(checkBookingsQuery);
+             PreparedStatement deleteStatement = connection.prepareStatement(deleteRoomQuery)) {
+
+            // Check if there are bookings for the room
+            checkStatement.setInt(1, room_number);
+            try (ResultSet rs = checkStatement.executeQuery()) {
+                rs.next();
+                int count = rs.getInt(1);
+
+                // If there are bookings, return false
+                if (count > 0) {
+                    return false;
+                }
+            }
+
+            // Delete the room
+            deleteStatement.setInt(1, room_number);
+            int affectedRows = deleteStatement.executeUpdate();
+            return affectedRows > 0;
+
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
-
-        return false;
     }
+
 }
 
 //    public static void main(String[] args) {

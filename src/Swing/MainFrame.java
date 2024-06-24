@@ -27,17 +27,6 @@ public class MainFrame extends JFrame {
         menuBar.add(RoomMangeFrame);
         setJMenuBar(menuBar);
 
-        //预定管理
-        JMenu BookingManageFrame=new JMenu("预定管理");
-        JMenuItem openItem2=new JMenuItem("打开");
-        JMenuItem openItem3=new JMenuItem("关闭");
-        openItem2.addActionListener(e -> new BookingManageFrame());
-        openItem3.addActionListener(e -> dispose());
-        BookingManageFrame.add(openItem2);
-        BookingManageFrame.add(openItem3);
-        menuBar.add(BookingManageFrame);
-        setJMenuBar(menuBar);
-
         //客户管理
         JMenu CustomermanageFrame=new JMenu("客户管理");
         JMenuItem openItem4=new JMenuItem("打开");
@@ -49,11 +38,22 @@ public class MainFrame extends JFrame {
         menuBar.add(CustomermanageFrame);
         setJMenuBar(menuBar);
 
+        //预定管理
+        JMenu BookingManageFrame=new JMenu("预定管理");
+        JMenuItem openItem2=new JMenuItem("打开");
+        JMenuItem openItem3=new JMenuItem("关闭");
+        openItem2.addActionListener(e -> new BookingManageFrame());
+        openItem3.addActionListener(e -> dispose());
+        BookingManageFrame.add(openItem2);
+        BookingManageFrame.add(openItem3);
+        menuBar.add(BookingManageFrame);
+        setJMenuBar(menuBar);
+
         //报表管理
         JMenu ReportManageFrame=new JMenu("报表管理");
         JMenuItem openItem6=new JMenuItem("打开");
         JMenuItem openItem7=new JMenuItem("关闭");
-        openItem6.addActionListener(e-> new ReportGenereationFrame());
+        openItem6.addActionListener(e-> new ReportGenerationFrame());
         openItem7.addActionListener(e -> dispose());
         ReportManageFrame.add(openItem6);
         ReportManageFrame.add(openItem7);

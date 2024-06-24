@@ -1013,7 +1013,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="292" parent="1" name="hotelmanagementsystem">
-      <LastIntrospectionLocalTimestamp>2024-06-23.22:24:10</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-06-24.20:47:05</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb3_croatian_ci</CollationName>
     </schema>
     <user id="293" parent="1" name="mysql.infoschema">
@@ -24167,6 +24167,8 @@ VARIABLE_NAME</ColNames>
     </foreign-key>
     <foreign-key id="4632" parent="675" name="booking_ibfk_2">
       <ColNames>room_number</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
       <RefColNames>room_number</RefColNames>
       <RefTableName>rooms</RefTableName>
     </foreign-key>
@@ -24179,7 +24181,7 @@ VARIABLE_NAME</ColNames>
       <ColNames>guest_name</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="4635" parent="675" name="room_number">
+    <index id="4635" parent="675" name="booking_ibfk_2">
       <ColNames>room_number</ColNames>
       <Type>btree</Type>
     </index>
@@ -24188,97 +24190,98 @@ VARIABLE_NAME</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="4637" parent="676" name="guest_id">
+    <trigger id="4637" parent="675" name="after_insert_order">
+      <Definer>root@localhost</Definer>
+      <Events>I</Events>
+      <SourceTextLength>107</SourceTextLength>
+    </trigger>
+    <column id="4638" parent="676" name="guest_id">
       <AutoIncrement>2</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="4638" parent="676" name="guest_name">
+    <column id="4639" parent="676" name="guest_name">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="4639" parent="676" name="guest_gender">
+    <column id="4640" parent="676" name="guest_gender">
       <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="4640" parent="676" name="guest_contact">
+    <column id="4641" parent="676" name="guest_contact">
       <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="4641" parent="676" name="id_number">
+    <column id="4642" parent="676" name="id_number">
       <DasType>varchar(255)|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="4642" parent="676" name="check_in_date">
+    <column id="4643" parent="676" name="check_in_date">
       <DasType>datetime|0s</DasType>
       <Position>6</Position>
     </column>
-    <column id="4643" parent="676" name="expected_stay">
+    <column id="4644" parent="676" name="expected_stay">
       <DasType>int|0s</DasType>
       <Position>7</Position>
     </column>
-    <index id="4644" parent="676" name="PRIMARY">
+    <index id="4645" parent="676" name="PRIMARY">
       <ColNames>guest_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="4645" parent="676" name="guest_name">
+    <index id="4646" parent="676" name="guest_name">
       <ColNames>guest_name</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="4646" parent="676" name="PRIMARY">
+    <key id="4647" parent="676" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="4647" parent="677" name="room_id">
+    <column id="4648" parent="677" name="room_id">
       <AutoIncrement>114</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="4648" parent="677" name="room_number">
+    <column id="4649" parent="677" name="room_number">
       <DasType>int|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="4649" parent="677" name="room_type">
+    <column id="4650" parent="677" name="room_type">
       <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="4650" parent="677" name="room_price">
+    <column id="4651" parent="677" name="room_price">
       <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="4651" parent="677" name="room_discount">
+    <column id="4652" parent="677" name="room_discount">
       <DasType>varchar(255)|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="4652" parent="677" name="STATUS">
+    <column id="4653" parent="677" name="STATUS">
       <DasType>varchar(255)|0s</DasType>
       <Position>6</Position>
     </column>
-    <column id="4653" parent="677" name="room_manager">
+    <column id="4654" parent="677" name="room_manager">
       <DasType>varchar(255)|0s</DasType>
       <Position>7</Position>
     </column>
-    <column id="4654" parent="677" name="room_contact">
+    <column id="4655" parent="677" name="room_contact">
       <DasType>varchar(255)|0s</DasType>
       <Position>8</Position>
     </column>
-    <index id="4655" parent="677" name="PRIMARY">
+    <index id="4656" parent="677" name="PRIMARY">
       <ColNames>room_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="4656" parent="677" name="room_number_2">
+    <index id="4657" parent="677" name="room_number_2">
       <ColNames>room_number</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
-    </index>
-    <index id="4657" parent="677" name="room_number">
-      <ColNames>room_number</ColNames>
-      <Type>btree</Type>
     </index>
     <key id="4658" parent="677" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>

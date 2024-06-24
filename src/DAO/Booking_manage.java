@@ -1,40 +1,63 @@
 package DAO;
+import com.mysql.cj.jdbc.CallableStatementWrapper;
 import tool.DataBaseConnection;
 import Data.Booking;
 import javax.swing.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+import java.sql.*;
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
+import static javax.management.remote.JMXConnectorFactory.connect;
 import static tool.ConvertTable.getJTable;
 public class Booking_manage {
     //增
-    public boolean addbookings(Booking booking){
-        String sql = "insert into booking(guest_name,room_number,check_in_date,check_out_date) values(?,?,?,?)";
-        try (
-                //获取数据库链接
-                Connection connection = DataBaseConnection.getConnection();
-                //预编译语句
-                PreparedStatement statement = connection.prepareStatement(sql)
-        ) {
-//            statement.setInt(1, booking.getBooking_id());
-            statement.setString(1,booking.getGuest_name());
-            statement.setInt(2,booking.getRoom_number());
-            statement.setDate(3, java.sql.Date.valueOf(booking.getCheck_in_date()));
-            statement.setDate(4, java.sql.Date.valueOf(booking.getCheck_out_date()));
+    public boolean addBookingForGuest(int room_number, String guest_name) {
+        // SQL 查询：获取特定客户的信息
+        String sql = "SELECT g.guest_name, g.check_in_date, " +
+                "DATE_ADD(g.check_in_date, INTERVAL g.expected_stay DAY) AS check_out_date " +
+                "FROM guests g " +
+                "WHERE g.guest_name = ?";
 
-            statement.executeUpdate();
-            int rowsAffected = statement.executeUpdate();
-            return rowsAffected > 0;
+        // SQL 插入：插入预订记录到预订表
+        String addSql = "INSERT INTO booking (guest_name, room_number, check_in_date, check_out_date) VALUES (?, ?, ?, ?)";
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+        try (Connection connection = DataBaseConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+
+            // 设置查询参数
+            statement.setString(1, guest_name);
+
+            try (PreparedStatement preparedStatement = connection.prepareStatement(addSql)) {
+                ResultSet resultSet = statement.executeQuery();
+
+                if (resultSet.next()) {
+                    LocalDate check_in_date = resultSet.getDate("check_in_date").toLocalDate();
+                    LocalDate check_out_date = resultSet.getDate("check_out_date").toLocalDate();
+
+                    // 设置预订记录的参数
+                    preparedStatement.setString(1, guest_name);
+                    preparedStatement.setInt(2, room_number);
+                    preparedStatement.setDate(3, java.sql.Date.valueOf(check_in_date));
+                    preparedStatement.setDate(4, java.sql.Date.valueOf(check_out_date));
+                    preparedStatement.executeUpdate();
+
+                    return true; // 插入成功，返回 true
+                } else {
+                    return false; // 没有找到指定客户，返回 false
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+                return false; // 插入过程中发生异常，返回 false
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false; // 查询过程中发生异常，返回 false
         }
-        return false;
     }
+
 
     //查
     public static JTable getBookingsTable(Map<String,String> customColumnNames){
@@ -43,7 +66,7 @@ public class Booking_manage {
         return getJTable(customColumnNames,sql);
     }
 
-    //查单个
+        //查单个
     public void getbookingDetail(int booking_id){
         String sql = "select * from booking where booking_id=?";
         try (
@@ -70,42 +93,80 @@ public class Booking_manage {
     }
 
     //更新
-    public void updatebooking(Booking booking){
-        String sql="UPDATE booking SET guest_name=?,room_number=?,check_in_date=?,check_out_date=? WHERE booking_id=?";
-        try (
-                //获取数据库链接
-                Connection connection = DataBaseConnection.getConnection();
-                //预编译语句
-                PreparedStatement statement = connection.prepareStatement(sql)
-        ) {
-            statement.setInt(5, booking.getBooking_id());
-            statement.setString(1,booking.getGuest_name());
-            statement.setInt(2,booking.getRoom_number());
-            statement.setDate(3, java.sql.Date.valueOf(booking.getCheck_in_date()));
-            statement.setDate(4, java.sql.Date.valueOf(booking.getCheck_out_date()));
-            statement.executeUpdate();
+    public void updatebooking(Object booking_id,String columnNames,Object data){
+        Map<String, Object> originalNames=new HashMap<>();
+        originalNames.put("预定编号","booking_id");
+        originalNames.put("客人姓名","guest_name");
+        originalNames.put("房间号","room_number");
+        originalNames.put("入住时间","check_in_date");
+        originalNames.put("离开时间","check_out_date");
 
-        } catch (SQLException e) {
+        String originNames=originalNames.get(columnNames).toString();
+        String sql="UPDATE booking SET "+ originNames +" =? WHERE booking_id=?";
+
+        try(Connection connection = DataBaseConnection.getConnection();
+            PreparedStatement statement=connection.prepareStatement(sql)) {
+
+            statement.setObject(1,data);
+            statement.setObject(2,booking_id);
+            statement.executeUpdate();
+            }catch (SQLException e){
             e.printStackTrace();
         }
-
     }
 
+
+
     //删除
-    public void deletebooking(int booking_id){
+    public boolean deletebooking(int booking_id){
         String sql = "delete from booking where booking_id=?";
         try (
                 Connection connection = DataBaseConnection.getConnection();
                 PreparedStatement statement = connection.prepareStatement(sql)
         ) {
             statement.setInt(1, booking_id);
-            statement.executeUpdate();
+            int rowAffected=statement.executeUpdate();
+            return rowAffected>0;
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
+        return false;
+    }
+    //报表生成
+    public static JTable getBookingTable(Map<String, String> customColumnNames, LocalDate startDate, LocalDate endDate) {
+        String sql = "SELECT booking_id, guest_name, room_number, check_in_date, check_out_date " +
+                "FROM booking " +
+                "WHERE check_in_date BETWEEN ? AND ?";
+
+        DefaultTableModel model = new DefaultTableModel();
+        customColumnNames.forEach((key, value) -> model.addColumn(value));
+
+        try (Connection conn =DataBaseConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, startDate.toString());
+            pstmt.setString(2, endDate.toString());
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                Object[] row = new Object[customColumnNames.size()];
+                int i = 0;
+                for (String column : customColumnNames.keySet()) {
+                    row[i++] = rs.getObject(column);
+                }
+                model.addRow(row);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return new JTable(model);
     }
 
-
+    public static JTable getBookingTable(Map<String, String> customColumnNames, LocalDate date) {
+        return getBookingTable(customColumnNames, date, date);
     }
+    
+}
 
