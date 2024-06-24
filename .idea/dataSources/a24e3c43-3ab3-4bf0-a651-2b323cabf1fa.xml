@@ -1013,7 +1013,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="292" parent="1" name="hotelmanagementsystem">
-      <LastIntrospectionLocalTimestamp>2024-06-10.09:02:25</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-06-23.22:24:10</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb3_croatian_ci</CollationName>
     </schema>
     <user id="293" parent="1" name="mysql.infoschema">
@@ -24139,7 +24139,7 @@ VARIABLE_NAME</ColNames>
       <Position>2</Position>
     </column>
     <column id="4626" parent="675" name="booking_id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>3</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -24189,7 +24189,7 @@ VARIABLE_NAME</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="4637" parent="676" name="guest_id">
-      <AutoIncrement>111</AutoIncrement>
+      <AutoIncrement>2</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -24207,7 +24207,7 @@ VARIABLE_NAME</ColNames>
       <Position>4</Position>
     </column>
     <column id="4641" parent="676" name="id_number">
-      <DasType>varbinary(100)|0s</DasType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="4642" parent="676" name="check_in_date">
@@ -24233,7 +24233,7 @@ VARIABLE_NAME</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="4647" parent="677" name="room_id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>114</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -24271,14 +24271,22 @@ VARIABLE_NAME</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="4656" parent="677" name="room_number">
+    <index id="4656" parent="677" name="room_number_2">
+      <ColNames>room_number</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="4657" parent="677" name="room_number">
       <ColNames>room_number</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="4657" parent="677" name="PRIMARY">
+    <key id="4658" parent="677" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="4659" parent="677" name="room_number_2">
+      <UnderlyingIndexName>room_number_2</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

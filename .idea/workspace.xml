@@ -5,16 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2cfd321-0717-4dc5-8d55-1f5e9c7225c7" name="更改" comment="还需要拓展一些功能">
+      <change afterPath="$PROJECT_DIR$/src/DAO/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Swing/CustomerManageFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Swing/RoomManagementFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Swing/background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool/ConvertTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/a24e3c43-3ab3-4bf0-a651-2b323cabf1fa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a24e3c43-3ab3-4bf0-a651-2b323cabf1fa.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2024_6_4_3_07____.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2024_6_4_下午3_07_取消提交了更改_[更改]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/Booking_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/Booking_manage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/Customer_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/Customer_manage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DAO/room_manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/room_manage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/user_manage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/InquireManagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/InquireManagePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/ReportGenereationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/ReportGenereationPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/RoomManagementPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/RoomManagementPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Swing/BookingManagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/BookingManageFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Swing/GuestMangePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Swing/InquireManagePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Swing/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/LoginFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Swing/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Swing/RegisterFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/RegisterFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Swing/ReportGenereationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/ReportGenereationFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Swing/RoomManagementPanel.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,8 +73,12 @@
     &quot;accountId&quot;: &quot;68d843da-870a-40d9-bf11-b1f1efa525ed&quot;
   }
 }</component>
+  <component name="PerforceDirect.Settings">
+    <option name="CHARSET" value="无" />
+  </component>
   <component name="ProblemsViewState">
     <option name="autoscrollToSource" value="true" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -80,7 +98,7 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/codejava/hotel_management_system/src/Sql&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/codejava/hotel_management_system/src/Swing&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -111,6 +129,7 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\codejava\hotel_management_system\src\Swing" />
       <recent name="D:\codejava\hotel_management_system\src\Sql" />
       <recent name="D:\codejava\hotel_management_system\src\img" />
       <recent name="D:\codejava\hotel_management_system\src" />
@@ -171,7 +190,42 @@
       <workItem from="1717987451586" duration="2839000" />
       <workItem from="1718007604458" duration="15865000" />
       <workItem from="1718079908504" duration="23000" />
-      <workItem from="1718176918945" duration="4657000" />
+      <workItem from="1718176918945" duration="5053000" />
+      <workItem from="1718266210016" duration="80000" />
+      <workItem from="1718272518121" duration="30000" />
+      <workItem from="1718273335032" duration="10000" />
+      <workItem from="1718274444910" duration="2638000" />
+      <workItem from="1718281635806" duration="13000" />
+      <workItem from="1718282175156" duration="513000" />
+      <workItem from="1718341594298" duration="970000" />
+      <workItem from="1718349038027" duration="147000" />
+      <workItem from="1718349347016" duration="10000" />
+      <workItem from="1718350350768" duration="14000" />
+      <workItem from="1718351428238" duration="9000" />
+      <workItem from="1718351462651" duration="5000" />
+      <workItem from="1718351614651" duration="17000" />
+      <workItem from="1718351696634" duration="112000" />
+      <workItem from="1718351951102" duration="1254000" />
+      <workItem from="1718524961042" duration="18000" />
+      <workItem from="1718527178737" duration="1421000" />
+      <workItem from="1718533537804" duration="1332000" />
+      <workItem from="1718695354439" duration="65000" />
+      <workItem from="1718695759811" duration="7000" />
+      <workItem from="1718695776866" duration="4204000" />
+      <workItem from="1718720124406" duration="301000" />
+      <workItem from="1718722053595" duration="5240000" />
+      <workItem from="1718767392677" duration="12000" />
+      <workItem from="1718793042909" duration="15000" />
+      <workItem from="1718796987868" duration="5000" />
+      <workItem from="1718801208403" duration="393000" />
+      <workItem from="1718803434747" duration="40000" />
+      <workItem from="1718845846073" duration="20000" />
+      <workItem from="1718845933417" duration="1992000" />
+      <workItem from="1718848219235" duration="1511000" />
+      <workItem from="1718850430780" duration="278000" />
+      <workItem from="1719033308074" duration="681000" />
+      <workItem from="1719092956540" duration="2496000" />
+      <workItem from="1719174839928" duration="8059000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -261,7 +315,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718027903119</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="还需要拓展一些功能">
+      <option name="closed" value="true" />
+      <created>1718181812521</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1718181812521</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -12,8 +12,8 @@ public class Room {
 
     //constructor
     public Room() {}
-    public Room(int room_id,int room_number,String room_type,double room_price,String room_discount,String status,String room_manager,String room_contact){
-        this.room_id = room_id;
+    public Room(int room_number,String room_type,double room_price,String room_discount,String status,String room_manager,String room_contact){
+//        this.room_id = room_id;
         this.room_number = room_number;
         this.room_type = room_type;
         this.room_price = room_price;

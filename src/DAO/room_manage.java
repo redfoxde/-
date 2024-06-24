@@ -1,68 +1,49 @@
 package DAO;
 import Data.Room;
 import tool.DataBaseConnection;
-
+import tool.ConvertTable;
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class room_manage {
     //添加房间
-    public void addRoom(Room room) {
-        String query = "INSERT INTO rooms(room_id,room_number,room_type,room_price,room_discount,STATUS,room_manager,room_contact)VALUES(?,?,?,?,?,?,?,?)";
+    public boolean addRoom(Room room) {
+        String query = "INSERT INTO rooms(room_number,room_type,room_price,room_discount,STATUS,room_manager,room_contact)VALUES(?,?,?,?,?,?,?)";
         try (
                 //获取数据库链接
                 Connection connection = DataBaseConnection.getConnection();
                 //预编译语句
                 PreparedStatement statement = connection.prepareStatement(query)
         ) {
-            statement.setInt(1, room.getRoom_id());
-            statement.setInt(2, room.getRoom_number());
-            statement.setString(3, room.getRoom_type());
-            statement.setDouble(4, room.getRoom_price());
-            statement.setString(5, room.getRoom_discount());
-            statement.setString(6, room.getStatus());
-            statement.setString(7, room.getRoom_manager());
-            statement.setString(8, room.getRoom_contact());
+//            statement.setInt(1, room.getRoom_id());
+            statement.setInt(1, room.getRoom_number());
+            statement.setString(2, room.getRoom_type());
+            statement.setDouble(3, room.getRoom_price());
+            statement.setString(4, room.getRoom_discount());
+            statement.setString(5, room.getStatus());
+            statement.setString(6, room.getRoom_manager());
+            statement.setString(7, room.getRoom_contact());
 
             statement.executeUpdate();
+            int AffectedRows = statement.executeUpdate();
+            return AffectedRows > 0;
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return false;
     }
 
     //查询所有房间
-    public List<Room> getAllRooms() {
-        List<Room> rooms = new ArrayList<Room>();
-        String query = "SELECT * FROM rooms";
-        try (
-                Connection connection = DataBaseConnection.getConnection();
-                PreparedStatement statement = connection.prepareStatement(query);
-                //执行并返回结果
-                ResultSet resultSet = statement.executeQuery()
-        ) {
-            while (resultSet.next()) {
-                Room room=new Room();
-                room.setRoom_id(resultSet.getInt("room_id"));
-                room.setRoom_number(resultSet.getInt("room_number"));
-                room.setRoom_type(resultSet.getString("room_type"));
-                room.setRoom_price(resultSet.getDouble("room_price"));
-                room.setRoom_discount(resultSet.getString("room_discount"));
-                room.setStatus(resultSet.getString("status"));
-                room.setRoom_manager(resultSet.getString("room_manager"));
-                room.setRoom_contact(resultSet.getString("room_contact"));
-                rooms.add(room);
-
-
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return rooms;
+    public static JTable getAllRooms(Map<String,String> customColumnNames) {
+        String sql = "SELECT * FROM rooms";
+        return ConvertTable.getJTable(customColumnNames,sql);
     }
 
     //展示房间细节
@@ -115,24 +96,29 @@ public class room_manage {
     }
 
     //更新信息
-    public void updateRoom(Room room) {
-        String sql ="UPDATE rooms SET room_number=?,room_type=?,room_price=?,room_discount=?,room_manager=?,room_contact=? WHERE room_id=? ";
+    public void updateRoom(Object room_id, String columnName, Object data) {
+
+        Map<String,String> originalNames=new HashMap<>();
+        originalNames.put("房间编号","room_id");
+        originalNames.put("房间号","room_number");
+        originalNames.put("房间类型","room_type");
+        originalNames.put("价格","room_price");
+        originalNames.put("折扣","room_discount");
+        originalNames.put("状态","STATUS");
+        originalNames.put("房间负责人","room_manager");
+        originalNames.put("联系电话","room_contact");
+
+        String originalName=originalNames.get(columnName);
+        String sql ="UPDATE rooms SET " + originalName + " = ? WHERE room_id = ?";
+
         try (
                 //获取数据库链接
                 Connection connection = DataBaseConnection.getConnection();
                 //预编译语句
                 PreparedStatement statement = connection.prepareStatement(sql)
         ) {
-
-            statement.setInt(1, room.getRoom_number());
-            statement.setString(2, room.getRoom_type());
-            statement.setDouble(3, room.getRoom_price());
-            statement.setString(4, room.getRoom_discount());
-            statement.setString(5, room.getStatus());
-            statement.setString(6, room.getRoom_manager());
-            statement.setString(7, room.getRoom_contact());
-            statement.setInt(8, room.getRoom_id());
-
+            statement.setObject(1,data);
+            statement.setObject(2, room_id);
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -141,7 +127,7 @@ public class room_manage {
     }
 
     //删除房间
-    public void deleteRoom(int room_id) {
+    public boolean deleteRoom(int room_id) {
         String sql = "DELETE FROM rooms WHERE room_id=?";
         try (
                 Connection connection = DataBaseConnection.getConnection();
@@ -149,10 +135,13 @@ public class room_manage {
         ) {
             statement.setInt(1, room_id);
             statement.executeUpdate();
+            int AffectedRows = statement.executeUpdate();
+            return AffectedRows > 0;
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
+        return false;
     }
 }
 

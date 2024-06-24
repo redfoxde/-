@@ -12,8 +12,8 @@ public class Customer {
     private int expected_stay;
 
     //constructor
-    public Customer(int guest_id,String guest_name,String guest_gender,String guest_contact,String id_number,LocalDate check_in_date,int expected_stay){
-        this.guest_id=guest_id;
+    public Customer(String guest_name,String guest_gender,String guest_contact,String id_number,LocalDate check_in_date,int expected_stay){
+//        this.guest_id=guest_id;
         this.guest_name=guest_name;
         this.guest_gender=guest_gender;
         this.guest_contact=guest_contact;

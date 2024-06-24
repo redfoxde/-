@@ -11,9 +11,9 @@ public class Booking {
 
     //constructor
     public Booking() {}
-    public Booking(int booking_id, String guest_name, int room_number, LocalDate check_in_date, LocalDate check_out_date) {
+    public Booking(String guest_name, int room_number, LocalDate check_in_date, LocalDate check_out_date) {
 
-    this.booking_id = booking_id;
+//    this.booking_id = booking_id;
     this.guest_name = guest_name;
     this.room_number = room_number;
     this.check_in_date = check_in_date;
@@ -50,7 +50,8 @@ public class Booking {
         this.check_out_date = check_out_date;
     }
     public String toString() {
-        return "预定信息 [预定编号:"
+        return "预定信息 "+"\n"+
+                "[预定编号:"
                 + booking_id +"\n"+
                 "客户姓名:"
                 + guest_name+"\n"+
@@ -59,7 +60,7 @@ public class Booking {
                 "入住日期:"
                 +check_in_date+"\n"+
                 "离开日期:"
-                +check_out_date+"\n"+"]";
+                +check_out_date+"]";
     }
 
 
