@@ -1,7 +1,5 @@
 package DAO;
-import com.mysql.cj.jdbc.CallableStatementWrapper;
 import tool.DataBaseConnection;
-import Data.Booking;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
@@ -10,7 +8,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import static javax.management.remote.JMXConnectorFactory.connect;
 import static tool.ConvertTable.getJTable;
 public class Booking_manage {
     //增
@@ -167,6 +164,6 @@ public class Booking_manage {
     public static JTable getBookingTable(Map<String, String> customColumnNames, LocalDate date) {
         return getBookingTable(customColumnNames, date, date);
     }
-    
+
 }
 

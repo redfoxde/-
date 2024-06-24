@@ -177,9 +177,7 @@ public class CustomerManageFrame extends JFrame {
                     dialog1.setVisible(true);
                 }
             });
-            cancelButton.addActionListener(e1 -> {
-                dialog.dispose();
-            });
+            cancelButton.addActionListener(e1 -> dialog.dispose());
             dialog.setVisible(true);
         });
 
@@ -211,7 +209,7 @@ public class CustomerManageFrame extends JFrame {
                     JOptionPane.showMessageDialog(null,"删除失败，请重试！");
                 }
             });
-            cancelButton.addActionListener(e1 -> {dialog1.dispose();});
+            cancelButton.addActionListener(e1 -> dialog1.dispose());
             dialog1.setVisible(true);
 
         });

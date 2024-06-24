@@ -9,6 +9,7 @@ import javax.swing.table.TableModel;
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class RoomManagementFrame extends JFrame {
     private room_manage roomManage=new room_manage();
@@ -259,7 +260,7 @@ public class RoomManagementFrame extends JFrame {
             panel1.add(cancelButton);
 
             comboBox.addActionListener(e12 -> {
-                String selected=comboBox.getSelectedItem().toString();
+                String selected= Objects.requireNonNull(comboBox.getSelectedItem()).toString();
                 STATUSField.setText(selected);
             });
             dialog.getContentPane().add(panel1);

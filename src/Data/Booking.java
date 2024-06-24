@@ -9,8 +9,6 @@ public class Booking {
     private LocalDate check_in_date;
     private LocalDate check_out_date;
 
-    //constructor
-    public Booking() {}
     public Booking(String guest_name, int room_number, LocalDate check_in_date, LocalDate check_out_date) {
 
 //    this.booking_id = booking_id;

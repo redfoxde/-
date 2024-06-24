@@ -13,7 +13,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ReportGenerationFrame extends JFrame {
-    Booking_manage booking_manage = new Booking_manage();
 
     public ReportGenerationFrame() {
         setTitle("酒店管理系统-报表生成");

@@ -1,15 +1,11 @@
 package Swing;
 
 import DAO.Booking_manage;
-import Data.Booking;
 
 import javax.swing.*;
 import javax.swing.event.TableModelEvent;
 import javax.swing.table.TableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,113 +37,91 @@ public class BookingManageFrame extends JFrame {
         panel.add(updateButton);
         add(panel,BorderLayout.SOUTH);
 
-        addButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                JDialog dialog = new JDialog((Frame) null,"添加预定信息");
-                dialog.setModal(true);
-                dialog.setSize(300,200);
-                dialog.setLocationRelativeTo(null);
-                dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        addButton.addActionListener(e -> {
+            JDialog dialog = new JDialog((Frame) null,"添加预定信息");
+            dialog.setModal(true);
+            dialog.setSize(300,200);
+            dialog.setLocationRelativeTo(null);
+            dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 
 
-                JPanel panel1 = new JPanel(new GridLayout(5,2));
+            JPanel panel1 = new JPanel(new GridLayout(5,2));
 
-                panel1.add(new JLabel("客户姓名"));
-                JTextField guest_nameField = new JTextField(10);
-                panel1.add(guest_nameField);
+            panel1.add(new JLabel("客户姓名"));
+            JTextField guest_nameField = new JTextField(10);
+            panel1.add(guest_nameField);
 
-                panel1.add(new JLabel("房间号"));
-                JTextField room_numberField = new JTextField(10);
-                panel1.add(room_numberField);
+            panel1.add(new JLabel("房间号"));
+            JTextField room_numberField = new JTextField(10);
+            panel1.add(room_numberField);
 
 
-                JButton saveButton=new JButton("保存");
-                JButton cancelButton=new JButton("取消");
-                panel1.add(saveButton);
-                panel1.add(cancelButton);
+            JButton saveButton=new JButton("保存");
+            JButton cancelButton=new JButton("取消");
+            panel1.add(saveButton);
+            panel1.add(cancelButton);
 
-                saveButton.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        String guest_name=guest_nameField.getText();
-                        int room_number=Integer.parseInt(room_numberField.getText());
+            saveButton.addActionListener(e12 -> {
+                String guest_name=guest_nameField.getText();
+                int room_number=Integer.parseInt(room_numberField.getText());
 
-                        if(booking_manage.addBookingForGuest(room_number,guest_name)){
-                            JOptionPane.showMessageDialog(null,"添加成功");
-                        }else{
-                            JOptionPane.showMessageDialog(null,"添加失败,请重试");
-                        }
-                    }
-                });
-                cancelButton.addActionListener(new ActionListener() {
-
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        dialog.dispose();
-                    }
-                });
-                dialog.getContentPane().add(panel1);
-                dialog.setVisible(true);
-            }
+                if(booking_manage.addBookingForGuest(room_number,guest_name)){
+                    JOptionPane.showMessageDialog(null,"添加成功");
+                }else{
+                    JOptionPane.showMessageDialog(null,"添加失败,请重试");
+                }
+            });
+            cancelButton.addActionListener(e13 -> dialog.dispose());
+            dialog.getContentPane().add(panel1);
+            dialog.setVisible(true);
         });
 
-        showAllMessage.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JDialog dialog = new JDialog((Frame) null,"添加预定信息");
-                dialog.setModal(true);
-                dialog.setSize(300,200);
-                dialog.setLocationRelativeTo(null);
-                dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        showAllMessage.addActionListener(e -> {
+            JDialog dialog = new JDialog((Frame) null,"添加预定信息");
+            dialog.setModal(true);
+            dialog.setSize(300,200);
+            dialog.setLocationRelativeTo(null);
+            dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 
-                JTable table=Booking_manage.getBookingsTable(customColumnNames);
-                if(table.getRowCount()>0){
-                    JScrollPane scrollPane=new JScrollPane(table);
-                    dialog.getContentPane().add(scrollPane);
-                    dialog.setVisible(true);
-                }
-
+            JTable table=Booking_manage.getBookingsTable(customColumnNames);
+            if(table.getRowCount()>0){
+                JScrollPane scrollPane=new JScrollPane(table);
+                dialog.getContentPane().add(scrollPane);
+                dialog.setVisible(true);
             }
+
         });
 
         //删除预定信息
-        deleteButton.addActionListener(new ActionListener() {
+        deleteButton.addActionListener(e -> {
+            JDialog dialog = new JDialog((Frame) null,"删除预定信息");
+            dialog.setModal(true);
+            dialog.setSize(300,200);
+            dialog.setLocationRelativeTo(null);
+            dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JDialog dialog = new JDialog((Frame) null,"删除预定信息");
-                dialog.setModal(true);
-                dialog.setSize(300,200);
-                dialog.setLocationRelativeTo(null);
-                dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+            JPanel panel1 = new JPanel(new GridLayout(5,2));
+            panel1.add(new JLabel("预定编号"));
+            JTextField guest_nameField = new JTextField(10);
+            panel1.add(guest_nameField);
 
-                JPanel panel1 = new JPanel(new GridLayout(5,2));
-                panel1.add(new JLabel("预定编号"));
-                JTextField guest_nameField = new JTextField(10);
-                panel1.add(guest_nameField);
+            JButton confirmButton=new JButton("确认");
+            panel1.add(confirmButton);
+            JButton cancelButton=new JButton("取消");
+            panel1.add(cancelButton);
 
-                JButton confirmButton=new JButton("确认");
-                panel1.add(confirmButton);
-                JButton cancelButton=new JButton("取消");
-                panel1.add(cancelButton);
+            confirmButton.addActionListener(e14 -> {
+                int booking_id=Integer.parseInt(guest_nameField.getText());
 
-                confirmButton.addActionListener(new ActionListener() {
-
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        int booking_id=Integer.parseInt(guest_nameField.getText());
-
-                        if(booking_manage.deletebooking(booking_id)){
-                            JOptionPane.showMessageDialog(null,booking_id+"已删除！");
-                        }else {
-                            JOptionPane.showMessageDialog(null,"删除失败，请重试!");
-                        }
-                    }
-                });
-                cancelButton.addActionListener(e1 -> {dialog.dispose();});
-                dialog.getContentPane().add(panel1);
-                dialog.setVisible(true);
-            }
+                if(booking_manage.deletebooking(booking_id)){
+                    JOptionPane.showMessageDialog(null,booking_id+"已删除！");
+                }else {
+                    JOptionPane.showMessageDialog(null,"删除失败，请重试!");
+                }
+            });
+            cancelButton.addActionListener(e1 -> dialog.dispose());
+            dialog.getContentPane().add(panel1);
+            dialog.setVisible(true);
         });
         //修改
         updateButton.addActionListener(e -> {
